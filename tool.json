@@ -1,0 +1,84 @@
+{
+  "category": "유체역학",
+  "category_en": "Fluid mechanics",
+  "id": "E133",
+  "slug": "eng-bond-number",
+  "title": "본드수 계산기",
+  "title_en": "Bond Number Calculator",
+  "fields": [
+    {
+      "key": "rhoa",
+      "label": "첫 번째 유체 밀도",
+      "label_en": "First-fluid density",
+      "dimension": "density",
+      "example": 1000,
+      "constraint": "positive",
+      "display_unit": "kgm3",
+      "display_value": "1000"
+    },
+    {
+      "key": "rhob",
+      "label": "두 번째 유체 밀도",
+      "label_en": "Second-fluid density",
+      "dimension": "density",
+      "example": 1.2,
+      "constraint": "positive",
+      "display_unit": "kgm3",
+      "display_value": "1.2"
+    },
+    {
+      "key": "g",
+      "label": "중력가속도",
+      "label_en": "Gravitational acceleration",
+      "dimension": "acceleration",
+      "example": 9.80665,
+      "constraint": "positive",
+      "display_unit": "ms2",
+      "display_value": "9.8066499999999994"
+    },
+    {
+      "key": "length",
+      "label": "특성길이",
+      "label_en": "Characteristic length",
+      "dimension": "length",
+      "example": 0.01,
+      "constraint": "positive",
+      "display_unit": "mm",
+      "display_value": "10"
+    },
+    {
+      "key": "sigma",
+      "label": "두 유체 사이 계면장력",
+      "label_en": "Interfacial tension between the fluids",
+      "dimension": "surfaceTension",
+      "example": 0.072,
+      "constraint": "positive",
+      "display_unit": "Nm",
+      "display_value": "0.071999999999999995"
+    }
+  ],
+  "result_label": "본드수 Bo",
+  "result_label_en": "Bond number Bo",
+  "result_dimension": "ratio",
+  "formula": "Bo = |ρ₁ − ρ₂|gL² / σ",
+  "purpose": "두 유체의 밀도차에 따른 중력 효과와 계면장력 효과의 크기 비를 계산합니다.",
+  "purpose_en": "Calculate the magnitude ratio of gravity due to the density difference between two fluids to interfacial tension.",
+  "assumptions": "서로 섞이지 않는 두 유체의 일정한 밀도와 계면장력을 사용합니다. 출력은 밀도차의 절댓값을 사용한 비음수 크기입니다. 상하 배치에 따른 계면 안정성이나 모양을 판정하지 않습니다.",
+  "assumptions_en": "Required: two immiscible fluids with constant densities and interfacial tension. The result is a nonnegative magnitude using the absolute density difference. Excluded: deciding interface stability or shape from fluid ordering and Bo alone.",
+  "sources": [
+    {
+      "label": "MIT: Gravity and surface-tension effects",
+      "url": "https://web.mit.edu/2.25/www/225_sect_11.html"
+    },
+    {
+      "label": "MIT 2.25 · Surface tension, Bond and Weber numbers",
+      "url": "https://web.mit.edu/2.25/www_old.bak/notes/11.pdf"
+    }
+  ],
+  "condition": "두 유체의 밀도와 계면장력, 특성길이를 확인했습니다.",
+  "condition_en": "I confirmed both fluid densities, interfacial tension and characteristic length.",
+  "site": "https://nanalab.kr/eng-bond-number/",
+  "repository": "https://github.com/NaNaCompany/eng-bond-number",
+  "groups": [],
+  "output_unit": "1"
+}

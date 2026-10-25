@@ -1,0 +1,56 @@
+{
+  "id": "E133",
+  "value": 13.604002805555556,
+  "reference70": "13.60400280555555555555555555555555555555555555555555555555555555555556",
+  "method": "Independent Python Decimal with 80-digit working precision, reported to 70 significant digits; direct physical formula. E140 uses 260-step dimensional-wavenumber bisection, independent of the runtime dimensionless solver.",
+  "cases": [
+    {
+      "name": "matched densities",
+      "values": {
+        "rhob": 1000
+      },
+      "expected": 0.0,
+      "reference70": "0.000000"
+    },
+    {
+      "name": "swapping fluids preserves magnitude",
+      "values": {
+        "rhoa": 1.2,
+        "rhob": 1000
+      },
+      "expected": 13.604002805555556,
+      "reference70": "13.60400280555555555555555555555555555555555555555555555555555555555556"
+    },
+    {
+      "name": "analytic twenty",
+      "values": {
+        "rhoa": 1000,
+        "rhob": 500,
+        "g": 10,
+        "length": 0.02,
+        "sigma": 0.1
+      },
+      "expected": 20.0,
+      "reference70": "20.000"
+    },
+    {
+      "name": "balanced extreme length squared",
+      "values": {
+        "rhoa": 2e-100,
+        "rhob": 1e-100,
+        "g": 1e-100,
+        "length": 1e+200,
+        "sigma": 1e+200
+      },
+      "expected": 1.0,
+      "reference70": "1"
+    },
+    {
+      "name": "zero tension rejected",
+      "values": {
+        "sigma": 0
+      },
+      "throws": true
+    }
+  ]
+}
